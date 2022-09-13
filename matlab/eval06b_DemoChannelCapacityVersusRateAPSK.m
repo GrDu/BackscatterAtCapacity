@@ -42,7 +42,6 @@ end
 MMinReq = ceil(2^RateChannelCapacity) % minimum required constellation size that prevents that
                                       % the information rate will definitely be bottlenecked by
                                       % the discretization of the transmit distribution.
-H_source = computeEntropyFromPMF(symbolProbs) % this is an upper bound for the achievable rate
 
 % NOW: Creating the  transmit signal
 if doPurelyReactiveLoadModulation
@@ -64,6 +63,7 @@ else
     M = length(S)
     symbolProbs
 end
+H_source = computeEntropyFromPMF(symbolProbs) % this is an upper bound for the achievable rate
 
 bpcuUncoded = log2(M)
 if bpcuUncoded < RateChannelCapacity
