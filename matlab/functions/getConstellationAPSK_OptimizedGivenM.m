@@ -6,6 +6,8 @@ function [S, pmf, radii, circleIdxOfSymbols, ChosenDesignSNR] = getConstellation
 % of symbol radii and probabilities.
 %
 %   Usage:
+%   [S, pmf, radii, circleIdxOfSymbols, ChosenDesignSNR] = getConstellationAPSK_OptimizedGivenM(M)
+%   or
 %   [S, pmf, radii, circleIdxOfSymbols, ChosenDesignSNR] = getConstellationAPSK_OptimizedGivenM(M, TargetSNR)
 %
 %   Inputs:
