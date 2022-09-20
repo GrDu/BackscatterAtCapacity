@@ -5,7 +5,7 @@
 % Be prepared for some runtime.
 %
 % This prepares Fig.4 (with add-ons) of the paper stated below. The results
-% are plotted in % eval04b_ComplexAwgnChan_OptCircleParamsVsSNR_Plot.m
+% are plotted in eval04b_ComplexAwgnChan_OptCircleParamsVsSNR_Plot.m
 % 
 %--------------------------------------------------------------------------
 %   This code repository accompanies the following academic publication:
