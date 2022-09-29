@@ -3,12 +3,15 @@ function rate = computeRate_RealAwgnChan_MassPoints(varianceRealNoise, symbols, 
 % rate over a real-valued peak-power-limited AWGN channel, given the parameters
 % of the mass points that describe a discrete  transmit distribution.
 %
-%   Usage: rate = computeRate_RealAwgnChan_MassPoints(varianceRealNoise, symbols, symbolProbabilities)
+%   Usage:
+%   rate = computeRate_RealAwgnChan_MassPoints(varianceRealNoise, symbols, symbolProbabilities)
+%   or
+%   rate = computeRate_RealAwgnChan_MassPoints(varianceRealNoise, symbols)
+%   which assumes uniform symbol probabilities.
 %
 %   Input varianceRealNoise is the AWGN variance.
-%   Input symbols is a vector containing the mass point locations.
-%   Input symbolProbabilities is a vector containing the mass points
-%   probabilities.
+%   Input symbols is a vector containing the real-valued mass point locations.
+%   Input symbolProbabilities is a vector containing the mass point probabilities.
 %   Output rate is the information rate in bit per channel use (bpcu).
 %
 %--------------------------------------------------------------------------
