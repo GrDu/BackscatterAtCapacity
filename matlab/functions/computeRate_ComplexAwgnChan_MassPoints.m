@@ -4,7 +4,13 @@ function rate = computeRate_ComplexAwgnChan_MassPoints(noiseVariance, symbols, s
 % parameters of the mass points that describe a discrete transmit distribution.
 %
 %   Usage:
+%   rate = computeRate_ComplexAwgnChan_MassPoints(noiseVariance, symbols)
+%   or
+%   rate = computeRate_ComplexAwgnChan_MassPoints(noiseVariance, symbols, symbolProbabilities)
+%   to specificy non-uniform symbol probabilities
+%   or
 %   rate = computeRate_ComplexAwgnChan_MassPoints(noiseVariance, symbols, symbolProbabilities, resolution)
+%   to furthermore specificy the complex-plane grid resolution.
 %
 %   Inputs:
 %   noiseVariance is the variance of the complex-valued additive white
