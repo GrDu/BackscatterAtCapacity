@@ -49,10 +49,6 @@ for m = 1 : M
 end
 S = S / max(abs(S)); % only done for additional numerical safety
 
-% % APSK acoording to DVB-S2X standard,
-% % https://ch.mathworks.com/help/comm/ref/dvbsapskmod.html
-% S = dvbsapskmod(0 : M-1, M, 's2x');
-
 % Some rudimentary pre-ordering
 [~,idx] = sort(abs(S) - 1E-6 * angle(S),'descend');
 S = S(idx);
