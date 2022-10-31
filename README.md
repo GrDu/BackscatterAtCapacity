@@ -1,4 +1,4 @@
-# BackscatterAtCapacity -- Academic Matlab Code Repository
+# BackscatterAtCapacity -- Academic Matlab Code
  Matlab code associated with the publication:
  "Load Modulation for Backscatter Communication: Channel Capacity and Capacity-Approaching Finite Constellations"
  arXiv preprint arXiv:2207.08100, July 2022.  
