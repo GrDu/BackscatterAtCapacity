@@ -53,29 +53,30 @@ if exist('TargetSNR','var') && SNR(goodIndices(1)) <= TargetSNR && TargetSNR <= 
     [~, ~, ak, qk] = channelCapacity_ComplexAwgnChan_PeakPowerConstr(1,1/TargetSNR);
 else
     if exist('TargetSNR','var') && TargetSNR < SNR(goodIndices(1))
-        warning('Number of circles K (resulting from the from the specified M with the employed construction scheme) is larger than optimal K for the specified TargetSNR')
+        warning('Number of circles K (resulting from the specified M with the employed construction scheme) is larger than optimal K for the specified TargetSNR')
         [~,tmpIdx] = min(abs(SNR(goodIndices) - TargetSNR));
         idxTargetSNR = goodIndices(tmpIdx);
     elseif exist('TargetSNR','var') && SNR(goodIndices(end)) < TargetSNR
-        warning('Number of circles K (resulting from the from the specified M with the employed construction scheme) is smaller than optimal K for the specified TargetSNR')
+        warning('Number of circles K (resulting from the specified M with the employed construction scheme) is smaller than optimal K for the specified TargetSNR')
         [~,tmpIdx] = min(abs(SNR(goodIndices) - TargetSNR));
         idxTargetSNR = goodIndices(tmpIdx);
-    else
-        % % As target SNR, choose the center of the eligible SNR interval:
+    else % No TargetSNR was specified, so we choose one ...
+    
+        % % Canonical choice: Center of the eligible SNR interval
         % idxTargetSNR = round(mean([goodIndices(1), goodIndices(end)])); 
        
-        % As target SNR, choose the upper end of the eligible SNR interval. This
-        % prevent a point cluster in the center:
+        % Choose the upper end of the eligible SNR interval
+        % (this prevents that the APSK constellation has an ugly dense point cluster near zero)
         idxTargetSNR = goodIndices(end);
     end
 
-    % Assign parameter values
+    % Assign the parameter values
     ChosenDesignSNR = SNR(idxTargetSNR);
     ak = ak_evolution(1:K,idxTargetSNR) / ak_evolution(1,idxTargetSNR);
     qk = qk_evolution(1:K,idxTargetSNR);
 end
 
-% Set radii, angles, and constellation PMF appropriately
+% Set the radii, angles, and constellation PMF appropriately
 for k = 1 : K
    idx = (circleIdxOfSymbols == k);
    if radii(k) > 0
